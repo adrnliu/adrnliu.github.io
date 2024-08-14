@@ -1,9 +1,11 @@
 h1 {
-  color: blue;
-  background-color: yellow;
-  border: 1px solid black;
+  color: black;
+  font-family: Georgia, serif;
+  /* background-color: yellow; */
+  /* border: 1px solid black; */
 }
 
-p {
-  color: red;
+body {
+  color: black;
+  font-family: Georgia, serif;
 }
