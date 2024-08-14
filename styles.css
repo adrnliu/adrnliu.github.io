@@ -1,6 +1,13 @@
 h1 {
   color: black;
-  font-family: Georgia, serif;
+  font-family: Arial, sans-serif;
+  /* background-color: yellow; */
+  /* border: 1px solid black; */
+}
+
+h2 {
+  color: black;
+  font-family: Arial, sans-serif;
   /* background-color: yellow; */
   /* border: 1px solid black; */
 }
@@ -8,4 +15,23 @@ h1 {
 body {
   color: black;
   font-family: Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
