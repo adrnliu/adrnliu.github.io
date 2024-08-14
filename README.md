@@ -14,6 +14,7 @@ Before Rutgers, I studied math and philosophy at Stanford and worked in the stat
 1. Why Wouldn't ZhuangZi have a Political Philosophy?
 	- ACPA Eastern APA, New York, January 2025
 	- ISCWP Pacific APA, Portland, April 2024
+	
 -----
 [PhilPeople](https://philpeople.org/profiles/adrian-liu)\
 Email: adrian.liu 'at' rutgers.edu
