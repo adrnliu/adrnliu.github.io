@@ -6,9 +6,10 @@ Before Rutgers, I studied math and philosophy at Stanford and worked in the stat
 -----
 
 ## Recent/Upcoming Presentations
-Manipulation: A Relational Analysis\
+Manipulation: A Relational Analysis
 * Central APA, February 2025
-Avoiding Polarization\
+
+Avoiding Polarization
 * Eastern APA, New York, January 2025
 * Formal Epistemology Workshop, ANU, July 2024
 Why Wouldn't ZhuangZi have a Political Philosophy?\
