@@ -24,9 +24,14 @@ body {
 /* Create three equal columns that floats next to each other */
 .column {
   float: left;
-  width: 33.33%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.right, .middle {
+  width: 25%;
+}
+
+.left {
+  width: 50%;
 }
 
 /* Clear floats after the columns */
@@ -34,4 +39,10 @@ body {
   content: "";
   display: table;
   clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+	width: 100%;
+  }
 }
