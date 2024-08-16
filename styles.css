@@ -1,3 +1,5 @@
+
+/* FONT STYLINGS */
 h1 {
   color: black;
   font-family: Arial, sans-serif;
@@ -9,7 +11,9 @@ h1 {
 
 h2 {
   color: black;
-  font-family: Arial, sans-serif;
+  font-family: Arial, san-serif;
+  font-size: larger;
+  /* font-weight:semibold; */
   /* background-color: yellow; */
   /* border: 1px solid black; */
 }
