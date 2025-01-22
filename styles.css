@@ -107,7 +107,6 @@ ul.none {
 ol {
   /* margin: 0; */
   padding: 0px 20px 0px;
-  
 }
 
 /* DETAIL STYLING */
@@ -124,6 +123,14 @@ summary {
   padding: 0.5em;
 }
 
+details summary { 
+  cursor: pointer;
+}
+
+details summary > * {
+  display: inline;
+}
+
 details[open] {
   padding: 0.5em;
 }
@@ -131,4 +138,14 @@ details[open] {
 details[open] summary {
   border-bottom: 1px solid gray;
   margin-bottom: 0.5em;
+}
+
+.overflow-wrap {
+  width: 240px;
+  border: 1px solid #000;
+  padding: 5px;
+}
+
+.overflow-wrap--break-word {
+  overflow-wrap: break-word;
 }
