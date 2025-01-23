@@ -112,19 +112,22 @@ ol {
 /* DETAIL STYLING */
 
 details {
-  border: 1px solid gray;
+  border: 0px solid gray;
+  /* border: 1px solid gray; */
   border-radius: 4px;
   padding: 0.5em 0.5em 0;
 }
 
 summary {
   font-weight: regular;
+  border-bottom: 0px solid gray;
   margin: -0.5em -0.5em 0;
   padding: 0.5em;
 }
 
 details summary { 
   cursor: pointer;
+  color: mediumpurple;
 }
 
 details summary > * {
@@ -136,7 +139,8 @@ details[open] {
 }
 
 details[open] summary {
-  border-bottom: 1px solid gray;
+  /* border-bottom: 1px solid gray; */
+  border-bottom: 0px solid gray;
   margin-bottom: 0.5em;
 }
 
