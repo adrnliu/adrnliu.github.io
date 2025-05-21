@@ -153,3 +153,8 @@ details[open] summary {
 .word-break--break-all {
   word-break: break-all;
 }
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
