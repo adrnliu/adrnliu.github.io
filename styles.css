@@ -178,6 +178,12 @@ details[open] summary {
   justify-content: space-around;
 }
 
+img.counter {
+  height: 1em;
+  width: auto;
+  vertical-align: text-bottom;
+}
+
 /* THEME TOGGLES */
 #theme-toggle {
   display: flex;
