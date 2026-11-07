@@ -31,6 +31,12 @@ p {
   margin-right: 0;
 }
 
+hr {
+  border: 0;
+  height: 1px;
+  background-color: light-dark(lightgrey, #444);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -94,7 +100,7 @@ a:active {
 
 a.philpeople:hover {
   color: blue;
-  background-color: lightgreen;
+  background-color: light-dark(lightgreen, #119d4a);
 }
 
 a.plain-link:link,
@@ -140,7 +146,7 @@ summary {
 
 details summary { 
   cursor: pointer;
-  color: mediumpurple;
+  color: light-dark(mediumpurple, #b9a0f0);
 }
 
 details summary > * {
@@ -172,29 +178,21 @@ details[open] summary {
   justify-content: space-around;
 }
 
-/* DARK MODE OVERRIDES */
-@media (prefers-color-scheme: dark) {
-  a:link,
-  details summary,
-  a.plain-link:hover,
-  a.plain-link:active {
-    color: #b9a0f0; /* lighter purple */
-  }
-  a.philpeople:hover {
-    color: blue;
-    background-color: #119d4a;
-  }
-  a:hover {
-    background-color: #2a2438;
-  }
-}
 #theme-toggle {
-  font-family: "Lato", Arial, sans-serif;
-  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: inherit;
   background: transparent;
-  border: 1px solid currentColor;
-  border-radius: 4px;
-  padding: 4px 8px;
+  border: none;
+  padding: 6px;
   cursor: pointer;
+}
+
+#theme-toggle:hover {
+  color: light-dark(mediumpurple, #b9a0f0);
+}
+
+#theme-toggle svg[hidden] {
+  display: none;
 }
