@@ -9,11 +9,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script>
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved) document.documentElement.dataset.theme = saved;
+      } catch (e) {}
+    </script>
   </head>
 <!-- BEGIN BODY -->
+
+<script>
+  const root = document.documentElement;
+  const btn = document.getElementById("theme-toggle");
+  const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function isDark() {
+    const t = root.dataset.theme;
+    return t ? t === "dark" : systemDark.matches;
+  }
+  function updateLabel() {
+    btn.textContent = isDark() ? "Light mode" : "Dark mode";
+  }
+
+  btn.addEventListener("click", () => {
+    const next = isDark() ? "light" : "dark";
+    root.dataset.theme = next;
+    try { localStorage.setItem("theme", next); } catch (e) {}
+    updateLabel();
+  });
+
+  systemDark.addEventListener("change", updateLabel);
+  updateLabel();
+</script>
   <body>
-  <!-- <body style = "background-color:#efe3ff"> -->
-    <h1>ADRIAN LIU</h1>
+  <div class="header-row">
+  <h1>ADRIAN LIU</h1>
+  <button id="theme-toggle" type="button" aria-label="Toggle light/dark mode">Dark mode</button>
+</div>
     <!-- MAIN TWO-COLUMN (second column empty currently) -->
     <div class="row">
       
@@ -39,7 +71,7 @@
           I'm a PhD candidate at <a href="https://philosophy.rutgers.edu/graduate-program" class="plain-link">Rutgers Philosophy</a>. 
           <!-- My committee is <a href="https://juancomesana.org/" style="color:black">Juan Comesan&#771a</a>, <a href="https://tedsider.org" style="color:black">Ted Sider</a>, <a href="https://www.elisabethcamp.org" style="color:black">Liz Camp</a>, <a href="https://www.andyegan.net" style="color:black">Andy Egan</a>, and <a href="https://www.kevindorst.com" style="color:black">Kevin Dorst</a> (MIT). 
         -->
-          I am interested in epistemic questions with political implications. My published work is on higher-order uncertainty and belief polarization, and my current research is about how rational agents should revise their beliefs when they revise their concepts. I also have research interests in the philosophy of computing and in Chinese Philosophy, especially 莊子. <br/><br/>
+          I am interested in epistemic questions with political implications. My published work is on higher-order uncertainty and belief polarization, and my current research is about how rational agents should revise their beliefs when they revise their concepts. I also have research interests in the philosophy of computing and in Chinese Philosophy, especially <a href="handouts/zhuangzi_handout.pdf" target="_blank" rel="noopener noreferrer" class="plain-link">莊子</a>. <br/><br/>
 
           I joined Rutgers in 2022. From 2020-2022 I worked at Placer County Superior Court in Roseville and the California Supreme Court in San Francisco. Before that I did my undergraduate studies at Stanford. I grew up just east of Interstate 5 in Northern San Diego in Southern California in the U.S. West Coast.
           <!-- My dissertation is about meaning and evidence, and their relevance for social philosophy. -->
@@ -154,8 +186,10 @@
     </div>
 
     <!-- FOOTER -->
+     <br>
     <hr style="color:gray;height:1px;border-width:0;color:lightgrey;background-color:lightgrey;">
     <p>
+      <br>
       <i>
         Rutgers — New Brunswick <br/>
         Department of Philosophy <br/>

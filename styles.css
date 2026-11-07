@@ -2,8 +2,10 @@
 /* SENSITIVITY TO LIGHT/DARK MODE */
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light dark;   /* default: follow the system */
 }
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }
 
 /* FONT STYLINGS */
 h1 {
@@ -31,6 +33,13 @@ p {
 
 * {
   box-sizing: border-box;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
 .column {
@@ -63,21 +72,18 @@ p {
 /* LINKS */
 
 a:link {
-  color: mediumpurple;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: grey;
+  color: light-dark(mediumpurple, #b9a0f0);
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  /* color: red; */
-  background-color: lavenderblush;
-  /* text-decoration: underline; */
+  background-color: light-dark(lavenderblush, #2a2438);
+}
+
+details summary {
+  cursor: pointer;
+  color: light-dark(mediumpurple, #b9a0f0);
 }
 
 a:active {
@@ -99,7 +105,8 @@ a.plain-link:visited {
 
 a.plain-link:hover,
 a.plain-link:active {
-  color: mediumpurple;
+  color: light-dark(mediumpurple, #b9a0f0);
+  background-color: transparent;
 }
 
 /* LIST STYLING */
@@ -180,4 +187,14 @@ details[open] summary {
   a:hover {
     background-color: #2a2438;
   }
+}
+#theme-toggle {
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 0.8rem;
+  color: inherit;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
 }
