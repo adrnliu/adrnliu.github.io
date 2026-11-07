@@ -2,7 +2,7 @@
 /* SENSITIVITY TO LIGHT/DARK MODE */
 
 :root {
-  color-scheme: light dark;   /* default: follow the system */
+  color-scheme: light dark;  
 }
 :root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"]  { color-scheme: dark; }
@@ -178,6 +178,7 @@ details[open] summary {
   justify-content: space-around;
 }
 
+/* THEME TOGGLES */
 #theme-toggle {
   display: flex;
   align-items: center;
@@ -188,11 +189,50 @@ details[open] summary {
   padding: 6px;
   cursor: pointer;
 }
-
 #theme-toggle:hover {
   color: light-dark(mediumpurple, #b9a0f0);
 }
-
 #theme-toggle svg[hidden] {
   display: none;
+}
+
+/* HOVER TOOLTIPS (not currently in use) */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip img {
+  display: block;
+}
+
+.tooltip::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 6px;
+  white-space: nowrap;
+  font: 0.8rem "Lato", Arial, sans-serif;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: light-dark(white, black);
+  background: light-dark(#333, #eee);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.tooltip:hover::after,
+.tooltip:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip-right::after {
+  left: auto;
+  right: 0;
 }
