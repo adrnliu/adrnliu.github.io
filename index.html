@@ -63,22 +63,17 @@
           I'm a PhD candidate at <a href="https://philosophy.rutgers.edu/graduate-program" class="plain-link">Rutgers Philosophy</a>. 
           <!-- My committee is <a href="https://juancomesana.org/" style="color:black">Juan Comesan&#771a</a>, <a href="https://tedsider.org" style="color:black">Ted Sider</a>, <a href="https://www.elisabethcamp.org" style="color:black">Liz Camp</a>, <a href="https://www.andyegan.net" style="color:black">Andy Egan</a>, and <a href="https://www.kevindorst.com" style="color:black">Kevin Dorst</a> (MIT). 
         -->
-          I am interested in epistemic questions with political implications. My published work is on higher-order uncertainty and belief polarization, and my current research is about how rational agents should revise their beliefs when they revise their concepts. I also have research interests in the philosophy of computing and in Chinese Philosophy, especially <a href="handouts/zhuangzi_handout.pdf" target="_blank" rel="noopener noreferrer" class="plain-link">莊子</a>. <br/><br/>
+          I am interested in epistemic questions with political implications:
+          my published work is on higher-order uncertainty and belief polarization, and my current research is about how rational agents should revise their beliefs when they revise their concepts.
+          I also have research interests in the philosophy of computing and in Chinese Philosophy, especially <a href="handouts/zhuangzi_handout.pdf" target="_blank" rel="noopener noreferrer" class="plain-link">莊子</a>. <br/><br/>
 
-          I joined Rutgers in 2022. From 2020-2022 I worked at Placer County Superior Court in Roseville and the California Supreme Court in San Francisco. Before that I did my undergraduate studies at Stanford. I grew up just east of Interstate 5 in Northern San Diego in Southern California in the U.S. West Coast.
-          <!-- My dissertation is about meaning and evidence, and their relevance for social philosophy. -->
+          I joined Rutgers in 2022.
+          From 2020-2022 I worked at Placer County Superior Court in Roseville and the California Supreme Court in San Francisco.
+          Before that I did my undergraduate studies at Stanford.
+          I grew up just east of Interstate 5 in Northern San Diego in Southern California on the U.S. West Coast.
           
-          <!-- I'm graduate co-director of <a href="https://piksiboston.weebly.com" style="color:black">PIKSI-Boston</a> for 2025 and 2026, and I convene the <a href="/erg.html" style="color:black">Epistemology Reading Group</a> at Rutgers. -->
-
-          <!-- I pronounce my name <a href="https://namedrop.io/adrianliu">this way</a>. -->
-           <!-- , and my pronouns are they/them.  -->
-          <!-- <br/>  <br/> 
-          I began at Rutgers in 2022. From 2020-2022 I worked at Placer Superior Court and the California Supreme Court. From 2016-2020 I studied mathematics and philosophy at Stanford.  -->
         </p>
       </div>
-      <!-- <div class = "column right">
-        <img src="resources/profile2.jpg" alt="Trulli" max-width="450" height="450">
-      </div> -->
     </div>
     <!-- PRESENTATIONS -->
     <div class="row">
@@ -118,14 +113,7 @@
                 <li><i><a href = "https://sites.google.com/view/few25"; class="plain-link">Formal Epistemology Workshop, University of Iceland, May 2025</a></i></li>
               </ul>
           </li>
-          <!-- Reassurance -->
-          <!-- <li>
-            Ineffective Reassurance (with Isabel Herburger)
-              <ul>
-                <li><i><a href = "https://danielwharris.com/teaching/pragmatics/conference.html"; style = "color:black">Non-Paradigmatic Pragmatics Workshop, Rutgers, May 2025</a></i></li>
-              </ul>
-          </li> -->
-          <!-- OPACITY -->
+          <!-- EVIDENCE -->
           <li>
             <a href="handouts/adrianliu_evidence_handout.pdf" target="_blank" rel="noopener noreferrer">The Evidence Function</a>
               <ul>
@@ -170,18 +158,15 @@
     </div>
 
     <!-- FOOTER -->
-     <br>
+    <br>
     <hr>
-
     <p style="color:gray">
         <br/>
         © 2026 Adrian Liu
     </p>
-      <br/>
+    <br/>
     <p style="color:gray">
-      <!-- Note to anyone copying the HTML for the following counter: the counter name ("username" on this page) must be unique. 
-       Otherwise different pages will increment the same counter. See http://stuff.mit.edu/doc/counter-howto.html. -->
-
+      <!-- MIT Page Counter from http://stuff.mit.edu/doc/counter-howto.html -->
       <i>This page has been accessed at least
       <a href="https://stuff.mit.edu/doc/counter-howto.html"><img class="counter"
       src="https://stuff.mit.edu/cgi/counter/adrianliuphilosophy20260528" alt="several"></a>
@@ -189,33 +174,33 @@
     </p>
 
   <script>
-  const root = document.documentElement;
-  const btn = document.getElementById("theme-toggle");
-  const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+    const root = document.documentElement;
+    const btn = document.getElementById("theme-toggle");
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-  function isDark() {
-    const t = root.dataset.theme;
-    return t ? t === "dark" : systemDark.matches;
-  }
-  function updateLabel() {
-    const dark = isDark();
-    btn.querySelector(".icon-moon").toggleAttribute("hidden", dark);
-    btn.querySelector(".icon-sun").toggleAttribute("hidden", !dark);
-    const label = dark ? "Switch to light mode" : "Switch to dark mode";
-    btn.setAttribute("aria-label", label);
-    btn.title = label;
-  }
+    function isDark() {
+      const t = root.dataset.theme;
+      return t ? t === "dark" : systemDark.matches;
+    }
+    function updateLabel() {
+      const dark = isDark();
+      btn.querySelector(".icon-moon").toggleAttribute("hidden", dark);
+      btn.querySelector(".icon-sun").toggleAttribute("hidden", !dark);
+      const label = dark ? "Switch to light mode" : "Switch to dark mode";
+      btn.setAttribute("aria-label", label);
+      btn.title = label;
+    }
 
-  btn.addEventListener("click", () => {
-    const next = isDark() ? "light" : "dark";
-    root.dataset.theme = next;
-    try { localStorage.setItem("theme", next); } catch (e) {}
+    btn.addEventListener("click", () => {
+      const next = isDark() ? "light" : "dark";
+      root.dataset.theme = next;
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      updateLabel();
+    });
+
+    systemDark.addEventListener("change", updateLabel);
     updateLabel();
-  });
-
-  systemDark.addEventListener("change", updateLabel);
-  updateLabel();
-</script>
+  </script>
   </body>
 <!-- END BODY -->
 </html>
