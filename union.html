@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <!-- HEAD -->
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Union Links</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script>
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved) document.documentElement.dataset.theme = saved;
+      } catch (e) {}
+    </script>
+  </head>
+<!-- BEGIN BODY -->
+
+  <body>
+    <div class="header-row">
+      <h1>UNION LINKS</h1>
+      <button id="theme-toggle" type="button" aria-label="Switch to dark mode">
+        <!-- moon (shown in light mode)-->
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        <!-- sun (shown in dark mode) -->
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden>
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+      </button>
+    </div>
+    <!-- MAIN TWO-COLUMN (second column empty currently) -->
+
+      <div class="row">
+        <div class="column left">
+        <p>
+          <ul>  
+            <li> <a href = "https://docs.google.com/document/d/1P3BFybtzzbpa_TKg2EPO2BLOo8P3Zdq9TgpViQ_rgLA/edit?tab=t.0">Training Notes</a></li>
+            <li> <a href = "https://docs.google.com/presentation/d/1578CAjNParg-xS7G9NWINeipARZcU--04gi2VtWbFfI/edit?usp=sharing"> Slides</a></li>
+          </ul>
+        </p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <br>
+    <hr>
+    <p style="color:gray">
+        <br/>
+        © 2026 Adrian Liu
+    </p>
+    <br/>
+    <p style="color:gray">
+      <!-- MIT Page Counter from http://stuff.mit.edu/doc/counter-howto.html -->
+      <i>This page has been accessed at least
+      <a href="https://stuff.mit.edu/doc/counter-howto.html"><img class="counter"
+      src="https://stuff.mit.edu/cgi/counter/adrianliuphilosophyunion20261112" alt="several"></a>
+      times since June 2026</i>
+    </p>
+
+  <script>
+    const root = document.documentElement;
+    const btn = document.getElementById("theme-toggle");
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+    function isDark() {
+      const t = root.dataset.theme;
+      return t ? t === "dark" : systemDark.matches;
+    }
+    function updateLabel() {
+      const dark = isDark();
+      btn.querySelector(".icon-moon").toggleAttribute("hidden", dark);
+      btn.querySelector(".icon-sun").toggleAttribute("hidden", !dark);
+      const label = dark ? "Switch to light mode" : "Switch to dark mode";
+      btn.setAttribute("aria-label", label);
+      btn.title = label;
+    }
+
+    btn.addEventListener("click", () => {
+      const next = isDark() ? "light" : "dark";
+      root.dataset.theme = next;
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      updateLabel();
+    });
+
+    systemDark.addEventListener("change", updateLabel);
+    updateLabel();
+  </script>
+  </body>
+<!-- END BODY -->
+</html>
